@@ -1,0 +1,48 @@
+{
+  "name": "justin_timberlake_is_that_you",
+  "version": "1.0.0",
+  "description": "Webpage that will only be happy when he finds Justin Timberlake",
+  "repository": {
+    "type": "git",
+    "url": "TBD"
+  },
+  "main": "src/js/app.js",
+  "scripts": {
+    "build": "gulp build &",
+    "clean": "rm -rf build/ && mkdir build/ && sudo kill -2 `ps -ef | awk '/gulp/ && !/awk/ {print $2}'`",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "beefy src/* --browserify $(which browserify) -t caching-coffeeify --live",
+    "setup": "npm install && npm run clean"
+  },
+  "author": "Kris Salvador",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "beefy": "^2.1.6",
+    "buffer": "^5.0.6",
+    "caching-coffeeify": "^0.5.1",
+    "coffeeify": "^2.0.1",
+    "exorcist": "^0.4.0",
+    "fast-csv": "^2.4.0",
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^1.12.0",
+    "gulp-uglify": "^1.5.4",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11",
+    "merge": "^1.2.0",
+    "minifyify": "^7.3.2",
+    "moment": "^2.18.1",
+    "rename": "^1.0.4",
+    "source": "0.0.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "clarifai": "^2.2.0"
+  }
+}
