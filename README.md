@@ -1,6 +1,7 @@
 # Justin Timberlake Pls!
 
-A webpage that will only be happy once Justin Timberlake visits her
+A webpage that will only be happy once Justin Timberlake visits her.
+Utilizes browser's webcam, uploads to IMGUR and passes through trained clarifai Justin Timberlake to confirm if it's Justin Timberlake.
 
 Technologies Used
 -------
