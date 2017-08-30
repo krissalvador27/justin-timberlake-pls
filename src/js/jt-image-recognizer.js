@@ -26,19 +26,14 @@ JTImageRecognizer.prototype.isThatYouJT = function(imgurObj) {
       let output   = response.outputs[0];
       let concepts = output.data.concepts;
       let justinTimberlakeScore = parseInt(concepts[0].value * 100);
+      
+      cameraInstance.resetCamera();
+      cameraInstance.deletePhoto(imgurObj);
 
       if (justinTimberlakeScore > 95) {
-        let canWeSave = window.confirm('OMG I\'m ' + score + '% sure you\'re Justin Timberlake! Can I log that you were here Justin!?');
-
-        if (canWeSave) {
-          cameraInstance.savePhoto(imgurObj);
-        } else {
-          this.cameraInstance.deletePhoto(imgurObj);
-        }
+        alert('OMG I\'m ' + justinTimberlakeScore + '% sure you\'re Justin Timberlake! Hi Justin!!! <(^_^)>');
       } else {
         alert('Nice try ... but I\'m pretty sure you\'re not Justin Timberlake... >:(');
-        cameraInstance.deletePhoto(imgurObj);
-        cameraInstance.resetCamera();
       }
     },
     (err) => {
