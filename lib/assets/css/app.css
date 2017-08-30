@@ -1,11 +1,105 @@
-.camera {
-  width: 500px;
-  height: 500px; }
+body {
+  height: 100%;
+  margin: 0px; }
 
-.snapshot-button {
-  width: 300px;
-  height: 35px; }
+h1, h2, p {
+  background-color: #454548;
+  color: white;
+  padding: 8px; }
 
-.submit-button,
-.redo-button {
-  display: none; }
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 5em;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0px; }
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 3em;
+  margin: 0px; }
+
+p {
+  font-family: 'Open Sans', sans-serif; }
+
+.main-container.init-click {
+  cursor: pointer; }
+
+.main-container .landing-container {
+  height: 100vh;
+  overflow: hidden; }
+  .main-container .landing-container .btn-group {
+    display: flex; }
+  .main-container .landing-container .btn {
+    box-sizing: border-box;
+    margin: 24px 8px 8px 8px;
+    border: 8px solid #454548;
+    background-color: white;
+    min-width: 75px;
+    height: 50px;
+    transition: all 100ms linear;
+    font-size: 1em; }
+    .main-container .landing-container .btn:hover {
+      cursor: pointer;
+      background-color: #454548;
+      color: white; }
+    .main-container .landing-container .btn .fa-camera {
+      font-size: 2em; }
+    .main-container .landing-container .btn .fa-thumbs-o-up {
+      margin-right: 4px; }
+  .main-container .landing-container .slide1,
+  .main-container .landing-container .slide2 {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 250ms linear; }
+  .main-container .landing-container .slide1.hide {
+    opacity: 0;
+    display: none; }
+  .main-container .landing-container .slide2 {
+    margin-top: 100%; }
+    .main-container .landing-container .slide2.show {
+      margin-top: 75px; }
+  .main-container .landing-container .blinker {
+    animation: blink 1s infinite; }
+  .main-container .landing-container .landing-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-color: #2196F3;
+    background-image: url("/lib/assets/images/jt.jpg");
+    z-index: -1; }
+  .main-container .landing-container .camera-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px; }
+    .main-container .landing-container .camera-container .camera {
+      min-width: 525px;
+      min-height: 525px; }
+  .main-container .landing-container .submit-button,
+  .main-container .landing-container .redo-button {
+    display: none; }
+
+@keyframes blink {
+  to {
+    opacity: .0; } }
+
+@keyframes type-effect {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+
+@keyframes type-effect-2 {
+  0% {
+    width: 0; }
+  50% {
+    width: 0; }
+  100% {
+    width: 100; } }

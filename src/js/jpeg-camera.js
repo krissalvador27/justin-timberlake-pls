@@ -28,12 +28,12 @@ JPEGCamera.prototype.initialize = function() {
  * @description Bind listeners & dom elements to trigger camera functions
  */
 JPEGCamera.prototype.bindEvents = function() {
-  document.getElementsByClassName('snapshot-button')[0].onclick = () => {
+  document.getElementsByClassName('camera-button')[0].onclick = () => {
     let snapshot = this.camera.capture();
     snapshot.show();
 
     // Hide snapshot button
-    hideButton('snapshot-button');
+    hideButton('camera-button');
 
     // Reveal submit and reset buttons
     showButton('submit-button');
@@ -101,7 +101,7 @@ JPEGCamera.prototype.resetCamera = function() {
 };
 
 function resetButtons() {
-  showButton('snapshot-button');
+  showButton('camera-button');
   hideButton('submit-button');
   hideButton('redo-button');
 };

@@ -14,9 +14,9 @@ JTImageRecognizer.prototype.initialize = function() {
 };
 
 /**
- * @description Is
- * @param  {[type]}  imgurObj [description]
- * @return {Boolean}          [description]
+ * @description Is that you JT?
+ * @param  {Object} imgurObj - imgur obj passed into 
+ * @return {Boolean}
  */
 JTImageRecognizer.prototype.isThatYouJT = function(imgurObj) {
   const link = imgurObj.data.link;
@@ -36,9 +36,9 @@ JTImageRecognizer.prototype.isThatYouJT = function(imgurObj) {
           this.cameraInstance.deletePhoto(imgurObj);
         }
       } else {
+        alert('Nice try ... but I\'m pretty sure you\'re not Justin Timberlake... >:(');
         cameraInstance.deletePhoto(imgurObj);
         cameraInstance.resetCamera();
-        alert('Nice try ... but I\'m pretty sure you\'re not Justin Timberlake... >:(');
       }
     },
     (err) => {

@@ -2,15 +2,38 @@
 <html>
   <head>
     <link rel="stylesheet" href="lib/assets/css/app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     <script type="text/javascript" src="lib/js/jpeg_camera/jpeg_camera_with_dependencies.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
-    <p>Hello Justin Timberlake!!!!</p>
-    <div class="camera" id="camera"></div>
-    <button class="snapshot-button">Picture!</button>
-    <button class="submit-button">Yes I'm Justin Timberlake!</button>
-    <button class="redo-button">Err let me get the real Justin Timberlake</button>
+    <div class="main-container init-click">
+      <div class="landing-container">
+        <div class="landing-image"></div>
+        <div class="slide1">
+          <h1 class="welcome">Hello there!</h1>
+          <p class="welcome-2">I'm looking for Justin Timberlake ...<span class="blinker">|</span></p>
+        </div>
+        <div class="slide2">
+          <h2>Are you Justin? <i class="fa fa-smile-o"></i></h2>
+          <div class="camera-container">
+            <div class="camera" id="camera"></div>
+            <div class="btn-group">
+              <button class="camera-button btn">
+                <i class="fa fa-camera"></i>
+              </button>
+              <button class="submit-button btn">
+                <i class="fa fa-thumbs-o-up"></i>Yes I'm JT!
+              </button>
+              <button class="redo-button btn">
+                <i class="fa fa-thumbs-o-down"></i> Let me get the real JT
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="build/bundle.js"></script>
   </body>
 </html>

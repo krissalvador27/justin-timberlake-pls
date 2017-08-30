@@ -17,16 +17,16 @@ const sass       = require('gulp-sass');
 const watch      = require('gulp-watch');
 
 var config = {
-    js: {
-      src: 'src/js/app.js',   // Entry point
-      outputDir: './build/',  // Directory to save budle to
-      mapDir: './maps/',      // Subdirectory to save maps to
-      outputFile: 'bundle.js' // Name to use for bundle
-    },
-    css: {
-      src: 'src/scss/*.scss',
-      outputFile: 'lib/assets/css'
-    }
+  js: {
+    src: 'src/js/app.js',   // Entry point
+    outputDir: './build/',  // Directory to save budle to
+    mapDir: './maps/',      // Subdirectory to save maps to
+    outputFile: 'bundle.js' // Name to use for bundle
+  },
+  css: {
+    src: 'src/scss/*.scss',
+    outputFile: 'lib/assets/css'
+  }
 };
 
 function bundle (bundler) {
@@ -46,35 +46,35 @@ function bundle (bundler) {
 
 // Watch task: Bundle, kick off live reload server, and rebundle/reload on file changes
 gulp.task('watch', function () {
-    livereload.listen();
-    let args = merge(watchify.args, { debug : true });
-    let bundler = browserify(config.js.src, args)
-                    .plugin(watchify, { ignoreWatch: ['**/node_modules'] })
-                    .transform(coffeeify)
-                    .transform(babelify, { presets : [ 'es2015' ] });
+  livereload.listen();
+  let args = merge(watchify.args, { debug : true });
+  let bundler = browserify(config.js.src, args)
+                  .plugin(watchify, { ignoreWatch: ['**/node_modules'] })
+                  .transform(coffeeify)
+                  .transform(babelify, { presets : [ 'es2015' ] });
 
+  bundle(bundler);
+
+  bundler.on('update', function () {
     bundle(bundler);
-
-    bundler.on('update', function () {
-      bundle(bundler);
-    });
+  });
 });
 
 gulp.task('styles', function () {
-    livereload.listen();
-    return gulp.src(config.css.src)
-        .pipe(watch(config.css.src))
-        .pipe(sass())
-        .pipe(gulp.dest(config.css.outputFile));
+  livereload.listen();
+  return gulp.src(config.css.src)
+      .pipe(watch(config.css.src))
+      .pipe(sass())
+      .pipe(gulp.dest(config.css.outputFile));
 });
 
 // Bundle task: Just spit out a bundle and source maps
 gulp.task('bundle', function () {
-    var bundler = browserify(config.js.src)
-                    .transform(coffeeify)
-                    .transform(babelify, { presets : [ 'es2015' ] });
+  let bundler = browserify(config.js.src)
+                  .transform(coffeeify)
+                  .transform(babelify, { presets : [ 'es2015' ] });
 
-    bundle(bundler);
+  bundle(bundler);
 })
 
 gulp.task('build', ['bundle', 'watch', 'styles']);
